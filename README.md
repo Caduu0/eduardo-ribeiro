@@ -42,7 +42,9 @@ Logging/auditing system
 Action control (promotions, removals, etc.)
 
 📸 Preview
-...
+[Portifolio](https://imgur.com/5W5qb8G)
+[Login Page](https://imgur.com/F087fzj)
+
 
 🌐 Live Project
 
