@@ -45,7 +45,9 @@ Action control (promotions, removals, etc.)
 
 [Portifolio](https://imgur.com/5W5qb8G)
 
-[Login Page](https://imgur.com/F087fzj)
+[Login Page](https://imgur.com/a/g72197i)
+
+[Projeto Android](https://imgur.com/bwvKg0K)
 
 
 🌐 Live Project
