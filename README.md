@@ -31,19 +31,12 @@ Responsive and modern design
 
 🔗 Visit: https://caduu0.github.io/eduardo-ribeiro/
 
-🔹 Login System
-User authentication system
-Password recovery via email
-Role-based access control (admin, user, master)
-
-🔹 Admin Panel
-User management
-Logging/auditing system
-Action control (promotions, removals, etc.)
 
 📸 Preview
 
 [Portifolio](https://imgur.com/5W5qb8G)
+
+[EmpreenderRH](https://imgur.com/a/77umusW)
 
 [Login Page](https://imgur.com/a/g72197i)
 
