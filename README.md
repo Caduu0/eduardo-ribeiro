@@ -29,12 +29,12 @@ Here are some of the projects available in this repository:
 Website created to showcase my projects and skills
 Responsive and modern design
 
-🔗 Visit: https://caduu0.github.io/eduardo-ribeiro/
+🔗 Visit: https://www.caduu.com.br
 
 
 📸 Preview
 
-[Portifolio](https://imgur.com/5W5qb8G)
+[Portifolio](https://imgur.com/RvzaDIW)
 
 [EmpreenderRH](https://imgur.com/a/77umusW)
 
@@ -45,7 +45,7 @@ Responsive and modern design
 
 🌐 Live Project
 
-👉 https://caduu0.github.io/eduardo-ribeiro/
+👉 https://www.caduu.com.br
 
 ⭐ About This Repository
 
