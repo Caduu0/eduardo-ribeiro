@@ -267,7 +267,9 @@ section h2 {
     background-color: var(--primary-light);
     border-radius: 0 8px 8px 0;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: flex-start;
     gap: 1.5rem;
 }
 
@@ -282,13 +284,67 @@ section h2 {
 }
 
 .projeto-img:hover {
-    transform: scale(1.3);
-    box-shadow: 0 4px 12px var(--shadow-dark);
+    transform: translateY(-5px) scale(1.15);
+    box-shadow: 0 8px 20px var(--shadow-dark);
+    position: relative;
+    z-index: 10;
 }
 
 #projetos h3 {
     color: var(--primary-dark);
     margin-bottom: 0.5rem;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+
+.skill-card {
+    background: linear-gradient(135deg, var(--white), var(--primary-light));
+    color: var(--text-color);
+    padding: 1.2rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    box-shadow: 0 4px 10px var(--shadow);
+    transition: all 0.3s ease;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    min-width: 110px;
+}
+
+.skill-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-dark);
+}
+
+.skill-card:hover .skill-icon {
+    transform: scale(1.1);
+}
+
+[data-theme="dark"] .skill-card {
+    background: linear-gradient(135deg, var(--bg-color), var(--primary-dark));
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .skill-card:hover {
+    background: linear-gradient(135deg, var(--primary-dark), var(--purple-color));
 }
 
 #contato p {
