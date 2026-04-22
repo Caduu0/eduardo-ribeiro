@@ -351,21 +351,6 @@ section h2 {
     font-size: 1.1rem;
 }
 
-.blurred {
-    filter: blur(4px);
-    transition: filter 0.3s ease;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-}
-
-.blurred:hover {
-    filter: blur(0);
-}
-
 footer {
     background-color: var(--primary-dark);
     color: var(--white);
