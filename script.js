@@ -151,6 +151,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(warning);
     }
 
+    function getBasePath() {
+        const scriptEl = document.querySelector('script[src$="script.js"]');
+        return scriptEl ? scriptEl.getAttribute('src').replace('script.js', '') : '';
+    }
+
     async function loadDictionary(lang) {
         if (i18nCache[lang]) return i18nCache[lang];
 
@@ -158,7 +163,8 @@ document.addEventListener('DOMContentLoaded', function() {
             console.warn('i18n: para carregar lang/*.json via fetch, abra o site com um servidor (ex.: Live Server), não via file://');
         }
 
-        const res = await fetch(`lang/${lang}.json`, { cache: 'no-cache' });
+        const basePath = getBasePath();
+        const res = await fetch(`${basePath}lang/${lang}.json`, { cache: 'no-cache' });
         if (!res.ok) throw new Error(`Falha ao carregar lang/${lang}.json (${res.status})`);
         const dict = await res.json();
         i18nCache[lang] = dict;
