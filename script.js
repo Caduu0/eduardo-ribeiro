@@ -18,13 +18,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const scrollToTopBtn = document.getElementById('scroll-to-top');
     if (scrollToTopBtn) {
-        window.addEventListener('scroll', function() {
+        const toggleScrollBtn = function() {
             if (window.pageYOffset > 100) {
                 scrollToTopBtn.style.display = 'block';
             } else {
                 scrollToTopBtn.style.display = 'none';
             }
-        });
+        };
+        window.addEventListener('scroll', toggleScrollBtn);
+        toggleScrollBtn();
 
         scrollToTopBtn.addEventListener('click', function() {
             window.scrollTo({
