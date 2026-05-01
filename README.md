@@ -19,6 +19,7 @@ Lua,
 Python,
 PHP,
 MySQL,
+Logica de programação,
 Git & GitHub.
 
 📂 Projects
