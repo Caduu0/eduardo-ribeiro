@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+        document.documentElement.lang = lang === 'pt' ? 'pt-BR' : (lang === 'es' ? 'es' : 'en');
         updateFlagOnButton(lang);
         updateThemeButtonLabel(lang);
     }
@@ -205,11 +205,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const langToggle = document.getElementById('lang-toggle');
     function resolveInitialLanguage() {
         const saved = safeGet('lang');
-        if (saved === 'pt' || saved === 'en') return saved;
+        if (saved === 'pt' || saved === 'en' || saved === 'es') return saved;
 
         const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
         if (browserLang.startsWith('pt')) return 'pt';
         if (browserLang.startsWith('en')) return 'en';
+        if (browserLang.startsWith('es')) return 'es';
 
         return 'pt';
     }
@@ -232,11 +233,28 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateFlagOnButton(lang) {
         if (!langToggle) return;
         const span = langToggle.querySelector('.flag-text');
-        const flag = lang === 'pt' ? '🇧🇷' : '🇺🇸';
+        
+        let flag = '🇧🇷';
+        let nextKey = 'ui.lang.switchToEnglish';
+        let fallback = 'Mudar para inglês';
+        
+        if (lang === 'pt') {
+            flag = '🇧🇷';
+            nextKey = 'ui.lang.switchToEnglish';
+            fallback = 'Mudar para inglês';
+        } else if (lang === 'en') {
+            flag = '🇺🇸';
+            nextKey = 'ui.lang.switchToSpanish';
+            fallback = 'Switch to Spanish';
+        } else if (lang === 'es') {
+            flag = '🇪🇸';
+            nextKey = 'ui.lang.switchToPortuguese';
+            fallback = 'Cambiar a portugués';
+        }
+
         if (span) span.textContent = flag;
         else langToggle.textContent = flag;
-        const nextKey = lang === 'pt' ? 'ui.lang.switchToEnglish' : 'ui.lang.switchToPortuguese';
-        const fallback = lang === 'pt' ? 'Mudar para inglês' : 'Switch to Portuguese';
+        
         const label = t(nextKey, fallback);
         langToggle.title = label;
         langToggle.setAttribute('aria-label', label);
@@ -247,7 +265,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function handleLanguageToggle(event) {
         if (event) event.preventDefault();
-            const next = currentLang === 'pt' ? 'en' : 'pt';
+            let next = 'pt';
+            if (currentLang === 'pt') next = 'en';
+            else if (currentLang === 'en') next = 'es';
+            else if (currentLang === 'es') next = 'pt';
+            
             currentLang = next;
             safeSet('lang', next);
             updateFlagOnButton(next);
