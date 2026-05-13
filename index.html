@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <title data-i18n="home.title">Portfólio Eduardo</title>
 </head>
-
 <body>
     <header>
         <div class="header-content">
@@ -40,7 +38,6 @@
             </svg>
         </button>
     </header>
-
     <main>
         <section id="sobre">
             <h2 data-i18n="home.about.title">Sobre Mim</h2>
@@ -49,19 +46,35 @@
                 desenvolver minhas habilidades, adquirir experiência profissional e contribuir com soluções eficientes
                 para a equipe.</p>
         </section>
-
         <section id="projetos">
             <h2 data-i18n="home.projects.title">Projetos</h2>
-            <article>
-                <a href="https://github.com/Caduu0/empreenderrh" target="_blank" rel="noopener noreferrer"><img
-                        src="img/projects/empreenderrh.png" alt="empreenderrh" class="projeto-img"></a>
-                <a href="https://github.com/Caduu0/login-eduardo" target="_blank" rel="noopener noreferrer"><img
-                        src="img/projects/loginpage.png" alt="pagina de login" class="projeto-img"></a>
-                <a href="https://caduu0.github.io/projetoandroid/" target="_blank" rel="noopener noreferrer"><img
-                        src="img/projects/projetoandroid.png" alt="projeto android" class="projeto-img"></a>
-            </article>
+            <div class="projects-grid" role="list">
+                <button type="button" class="project-tile" role="listitem" data-project="empreenderrh"
+                    aria-haspopup="dialog">
+                    <span class="project-tile__thumb-wrap">
+                        <img src="img/projects/empreenderrh.png" alt="" class="projeto-img" width="440" height="240"
+                            decoding="async">
+                    </span>
+                    <span class="project-tile__name" data-i18n="projects.empreenderrh.name">Empreender RH</span>
+                </button>
+                <button type="button" class="project-tile" role="listitem" data-project="login-eduardo"
+                    aria-haspopup="dialog">
+                    <span class="project-tile__thumb-wrap">
+                        <img src="img/projects/loginpage.png" alt="" class="projeto-img" width="440" height="240"
+                            decoding="async">
+                    </span>
+                    <span class="project-tile__name" data-i18n="projects.loginEduardo.name">Login System</span>
+                </button>
+                <button type="button" class="project-tile" role="listitem" data-project="projetoandroid"
+                    aria-haspopup="dialog">
+                    <span class="project-tile__thumb-wrap">
+                        <img src="img/projects/projetoandroid.png" alt="" class="projeto-img" width="440" height="240"
+                            decoding="async">
+                    </span>
+                    <span class="project-tile__name" data-i18n="projects.projetoandroid.name">Projeto Android</span>
+                </button>
+            </div>
         </section>
-
         <section id="habilidades">
             <h2 data-i18n="home.skills.title">Habilidades</h2>
             <div class="skills-grid">
@@ -99,7 +112,6 @@
                 </div>
             </div>
         </section>
-
         <section id="contato">
             <h2 data-i18n="home.contact.title">Contato</h2>
             <p><span data-i18n="home.contact.emailLabel">Email:</span> <span id="email"><a
@@ -118,15 +130,56 @@
                     data-i18n="home.contact.instagramName">@caduuu0_</a></p>
         </section>
     </main>
-
     <footer>
         <p data-i18n="home.footer.text">&copy; <span id="current-year"></span> Carlos Eduardo. Todos os direitos
             reservados.</p>
     </footer>
-
     <button id="scroll-to-top">↑</button>
-
+    <div id="project-modal" class="project-modal" hidden data-state="closed">
+        <div class="project-modal__backdrop" tabindex="-1"></div>
+        <div class="project-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+            <button type="button" class="project-modal__close" aria-label="Fechar">&times;</button>
+            <div class="project-modal__scroll">
+                <div class="project-modal__hero" data-hero-bg>
+                    <div class="project-modal__hero-inner">
+                        <p class="project-modal__kicker" data-field="kicker"></p>
+                        <h3 class="project-modal__hero-title" data-field="heroTitle"></h3>
+                        <p class="project-modal__hero-lead" data-field="heroLead"></p>
+                        <div class="project-modal__hero-cta">
+                            <a class="project-modal__btn project-modal__btn--primary" data-field="ctaDemo" href="#"
+                                target="_blank" rel="noopener noreferrer" hidden></a>
+                            <a class="project-modal__btn project-modal__btn--ghost" data-field="ctaGithub" href="#"
+                                target="_blank" rel="noopener noreferrer"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-modal__body">
+                    <h2 id="project-modal-title" class="project-modal__title" data-field="detailTitle"></h2>
+                    <p class="project-modal__description" data-field="description"></p>
+                    <ul class="project-modal__tags" data-field="tags" aria-label=""></ul>
+                    <section class="project-modal__section" data-section="media">
+                        <h3 class="project-modal__section-title" data-i18n="ui.projectModal.mediaTitle">Mídias do
+                            projeto</h3>
+                        <div class="project-modal__carousel" data-carousel>
+                            <div class="project-modal__carousel-viewport">
+                                <div class="project-modal__carousel-track" data-carousel-track></div>
+                            </div>
+                            <div class="project-modal__carousel-dots" data-carousel-dots hidden></div>
+                        </div>
+                    </section>
+                    <section class="project-modal__section">
+                        <h3 class="project-modal__section-title" data-i18n="ui.projectModal.linksTitle">Links</h3>
+                        <div class="project-modal__links">
+                            <a class="project-modal__btn project-modal__btn--link" data-field="linkDemo" href="#"
+                                target="_blank" rel="noopener noreferrer" hidden></a>
+                            <a class="project-modal__btn project-modal__btn--link" data-field="linkGithub" href="#"
+                                target="_blank" rel="noopener noreferrer"></a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
-
 </html>

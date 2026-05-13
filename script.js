@@ -173,6 +173,210 @@ document.addEventListener('DOMContentLoaded', function() {
         return dict;
     }
 
+    const PROJECT_DEFS = {
+        empreenderrh: {
+            image: 'img/projects/empreenderrh.png',
+            github: 'https://github.com/Caduu0/empreenderrh',
+            demo: null,
+            i18nPrefix: 'projects.empreenderrh'
+        },
+        'login-eduardo': {
+            image: 'img/projects/loginpage.png',
+            github: 'https://github.com/Caduu0/login-eduardo',
+            demo: null,
+            i18nPrefix: 'projects.loginEduardo'
+        },
+        projetoandroid: {
+            image: 'img/projects/projetoandroid.png',
+            github: 'https://github.com/Caduu0/projetoandroid',
+            demo: 'https://caduu0.github.io/projetoandroid/',
+            i18nPrefix: 'projects.projetoandroid'
+        }
+    };
+
+    const projectModal = document.getElementById('project-modal');
+    let projectModalOpenId = null;
+    let modalFocusBeforeOpen = null;
+    let carouselIndex = 0;
+    let carouselImages = [];
+
+    function syncProjectModalChrome() {
+        if (!projectModal) return;
+        const closeBtn = projectModal.querySelector('.project-modal__close');
+        if (closeBtn) {
+            closeBtn.setAttribute('aria-label', t('ui.projectModal.closeLabel', 'Fechar'));
+        }
+    }
+
+    function setCarouselTransform() {
+        if (!projectModal) return;
+        const track = projectModal.querySelector('[data-carousel-track]');
+        const dots = projectModal.querySelectorAll('.project-modal__carousel-dot');
+        if (track) {
+            track.style.transform = `translateX(-${carouselIndex * 100}%)`;
+        }
+        dots.forEach((dot, i) => {
+            dot.setAttribute('aria-current', i === carouselIndex ? 'true' : 'false');
+        });
+    }
+
+    function buildProjectCarousel(images) {
+        if (!projectModal) return;
+        const track = projectModal.querySelector('[data-carousel-track]');
+        const dotsWrap = projectModal.querySelector('[data-carousel-dots]');
+        if (!track || !dotsWrap) return;
+
+        carouselImages = images.slice();
+        carouselIndex = 0;
+        track.innerHTML = '';
+        dotsWrap.innerHTML = '';
+
+        const list = carouselImages.length ? carouselImages : [''];
+
+        list.forEach((src) => {
+            const slide = document.createElement('div');
+            slide.className = 'project-modal__carousel-slide';
+            if (src) {
+                const img = document.createElement('img');
+                img.src = src;
+                img.alt = '';
+                img.decoding = 'async';
+                slide.appendChild(img);
+            }
+            track.appendChild(slide);
+        });
+
+        if (list.length > 1) {
+            dotsWrap.hidden = false;
+            list.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.type = 'button';
+                dot.className = 'project-modal__carousel-dot';
+                dot.addEventListener('click', () => {
+                    carouselIndex = i;
+                    setCarouselTransform();
+                });
+                dotsWrap.appendChild(dot);
+            });
+        } else {
+            dotsWrap.hidden = true;
+        }
+
+        setCarouselTransform();
+    }
+
+    function fillProjectModal(id) {
+        const def = PROJECT_DEFS[id];
+        if (!def || !projectModal) return;
+
+        const prefix = def.i18nPrefix;
+        const hero = projectModal.querySelector('[data-hero-bg]');
+        if (hero) {
+            const safe = def.image.replace(/\\/g, '/').replace(/"/g, '\\"');
+            hero.style.setProperty('--pm-hero-image', `url("${safe}")`);
+        }
+
+        const setText = (field, key, fb) => {
+            const el = projectModal.querySelector(`[data-field="${field}"]`);
+            if (el) el.textContent = t(key, fb);
+        };
+
+        setText('kicker', `${prefix}.kicker`, '');
+        setText('heroTitle', `${prefix}.heroTitle`, '');
+        setText('heroLead', `${prefix}.heroLead`, '');
+        setText('detailTitle', `${prefix}.detailTitle`, '');
+        setText('description', `${prefix}.description`, '');
+
+        const tagsUl = projectModal.querySelector('[data-field="tags"]');
+        if (tagsUl) {
+            tagsUl.setAttribute('aria-label', t('ui.projectModal.tagsLabel', 'Tecnologias'));
+            tagsUl.innerHTML = '';
+            const rawTags = t(`${prefix}.tags`, '');
+            rawTags.split('|').map(s => s.trim()).filter(Boolean).forEach(text => {
+                const li = document.createElement('li');
+                li.textContent = text;
+                tagsUl.appendChild(li);
+            });
+        }
+
+        const hasDemo = Boolean(def.demo && String(def.demo).trim());
+        const openDemoLabel = t('ui.projectModal.openDemo', 'Abrir projeto');
+        const viewRepoLabel = t('ui.projectModal.viewRepo', 'GitHub');
+
+        const ctaDemo = projectModal.querySelector('[data-field="ctaDemo"]');
+        const ctaGithub = projectModal.querySelector('[data-field="ctaGithub"]');
+        const linkDemo = projectModal.querySelector('[data-field="linkDemo"]');
+        const linkGithub = projectModal.querySelector('[data-field="linkGithub"]');
+
+        if (ctaDemo && ctaGithub && linkDemo && linkGithub) {
+            ctaGithub.href = def.github;
+            linkGithub.href = def.github;
+            linkGithub.textContent = viewRepoLabel;
+            ctaGithub.textContent = viewRepoLabel;
+
+            ctaGithub.classList.toggle('project-modal__btn--primary', !hasDemo);
+            ctaGithub.classList.toggle('project-modal__btn--ghost', hasDemo);
+            linkGithub.classList.remove('project-modal__btn--primary');
+            linkGithub.classList.add('project-modal__btn--link');
+
+            if (hasDemo) {
+                ctaDemo.hidden = false;
+                ctaDemo.href = def.demo;
+                ctaDemo.textContent = openDemoLabel;
+                ctaDemo.classList.add('project-modal__btn--primary');
+                ctaDemo.classList.remove('project-modal__btn--ghost');
+
+                linkDemo.hidden = false;
+                linkDemo.href = def.demo;
+                linkDemo.textContent = openDemoLabel;
+                linkDemo.classList.add('project-modal__btn--link');
+            } else {
+                ctaDemo.hidden = true;
+                ctaDemo.removeAttribute('href');
+                ctaDemo.textContent = '';
+
+                linkDemo.hidden = true;
+                linkDemo.removeAttribute('href');
+                linkDemo.textContent = '';
+            }
+        }
+
+        buildProjectCarousel([def.image]);
+        syncProjectModalChrome();
+    }
+
+    function openProjectModal(id) {
+        if (!projectModal || !PROJECT_DEFS[id]) return;
+        modalFocusBeforeOpen = document.activeElement;
+        projectModalOpenId = id;
+        fillProjectModal(id);
+        projectModal.hidden = false;
+        projectModal.setAttribute('data-state', 'open');
+        document.body.style.overflow = 'hidden';
+
+        const closeBtn = projectModal.querySelector('.project-modal__close');
+        if (closeBtn) closeBtn.focus();
+    }
+
+    function closeProjectModal() {
+        if (!projectModal || !projectModalOpenId) return;
+        projectModal.hidden = true;
+        projectModal.setAttribute('data-state', 'closed');
+        projectModalOpenId = null;
+        document.body.style.overflow = '';
+        if (modalFocusBeforeOpen && typeof modalFocusBeforeOpen.focus === 'function') {
+            modalFocusBeforeOpen.focus();
+        }
+        modalFocusBeforeOpen = null;
+    }
+
+    function onProjectModalKeydown(e) {
+        if (e.key === 'Escape' && projectModalOpenId) {
+            e.preventDefault();
+            closeProjectModal();
+        }
+    }
+
     async function applyLanguage(lang) {
         const requestId = ++languageRequestId;
         let dict;
@@ -200,6 +404,11 @@ document.addEventListener('DOMContentLoaded', function() {
         document.documentElement.lang = lang === 'pt' ? 'pt-BR' : (lang === 'es' ? 'es' : 'en');
         updateFlagOnButton(lang);
         updateThemeButtonLabel(lang);
+
+        syncProjectModalChrome();
+        if (projectModalOpenId) {
+            fillProjectModal(projectModalOpenId);
+        }
     }
 
     const langToggle = document.getElementById('lang-toggle');
@@ -279,6 +488,29 @@ document.addEventListener('DOMContentLoaded', function() {
     if (langToggle) {
         langToggle.addEventListener('click', handleLanguageToggle);
         langToggle.addEventListener('touchend', handleLanguageToggle, { passive: false });
+    }
+
+    if (projectModal) {
+        syncProjectModalChrome();
+
+        document.querySelectorAll('.project-tile[data-project]').forEach(tile => {
+            tile.addEventListener('click', () => {
+                const id = tile.getAttribute('data-project');
+                if (id) openProjectModal(id);
+            });
+        });
+
+        const backdrop = projectModal.querySelector('.project-modal__backdrop');
+        if (backdrop) {
+            backdrop.addEventListener('click', () => closeProjectModal());
+        }
+
+        const closeBtn = projectModal.querySelector('.project-modal__close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => closeProjectModal());
+        }
+
+        document.addEventListener('keydown', onProjectModalKeydown);
     }
 
 });

@@ -30,7 +30,7 @@ Here are some of the projects available in this repository:
 Website created to showcase my projects and skills
 Responsive and modern design
 
-🔗 Visit: https://www.caduu.com.br
+🔗 Visit: https://caduu.com.br
 
 
 📸 Preview
@@ -46,7 +46,7 @@ Responsive and modern design
 
 🌐 Live Project
 
-👉 https://www.caduu.com.br
+👉 https://caduu.com.br
 
 ⭐ About This Repository
 
