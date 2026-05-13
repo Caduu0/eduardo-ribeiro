@@ -141,11 +141,6 @@ header {
     transition: all 0.3s ease;
 }
 
-.profile-img:hover {
-    transform: scale(1.5) rotate(5deg);
-    box-shadow: 0 6px 20px var(--shadow-dark);
-}
-
 .header-content h1 {
     margin-bottom: 0;
 }
