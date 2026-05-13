@@ -1,6 +1,6 @@
 🚀 My Portfolio
 
-Welcome to my portfolio! 👨‍💻
+👨‍💻 Welcome to my portfolio!
 
 Here you can find some of my projects, skills, and ways to contact me.
 
