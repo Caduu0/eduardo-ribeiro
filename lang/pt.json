@@ -52,11 +52,11 @@
   "ui.projectModal.linksTitle": "Links",
   "ui.projectModal.tagsLabel": "Tecnologias utilizadas",
 
-  "projects.empreenderrh.name": "Empreender RH",
+  "projects.empreenderrh.name": "EmpreenderRH",
   "projects.empreenderrh.kicker": "Projeto",
-  "projects.empreenderrh.heroTitle": "Empreender RH",
+  "projects.empreenderrh.heroTitle": "EmpreenderRH",
   "projects.empreenderrh.heroLead": "Sistema com foco em recursos humanos e apoio a pequenos empreendimentos.",
-  "projects.empreenderrh.detailTitle": "Empreender RH",
+  "projects.empreenderrh.detailTitle": "EmpreenderRH",
   "projects.empreenderrh.description": "Projeto acadêmico voltado a organizar informações de RH, cadastros e fluxos simples de gestão. Objetivo: praticar modelagem de telas, formulários e integração com back-end em PHP, além de versionamento com Git.",
   "projects.empreenderrh.tags": "HTML | CSS | PHP | MySQL",
 

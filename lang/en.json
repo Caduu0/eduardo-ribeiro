@@ -52,11 +52,11 @@
   "ui.projectModal.linksTitle": "Links",
   "ui.projectModal.tagsLabel": "Technologies",
 
-  "projects.empreenderrh.name": "Empreender RH",
+  "projects.empreenderrh.name": "EmpreenderRH",
   "projects.empreenderrh.kicker": "Project",
-  "projects.empreenderrh.heroTitle": "Empreender RH",
+  "projects.empreenderrh.heroTitle": "EmpreenderRH",
   "projects.empreenderrh.heroLead": "A system focused on human resources and supporting small businesses.",
-  "projects.empreenderrh.detailTitle": "Empreender RH",
+  "projects.empreenderrh.detailTitle": "EmpreenderRH",
   "projects.empreenderrh.description": "Academic project for organizing HR information, registrations, and simple management flows. Goals: practice screen modeling, forms, PHP back-end integration, and Git versioning.",
   "projects.empreenderrh.tags": "HTML | CSS | PHP | MySQL",
 
@@ -68,11 +68,11 @@
   "projects.loginEduardo.description": "Login UI study with clear fields, visual feedback, and responsiveness. Focus on typography hierarchy, button states, and semantic markup.",
   "projects.loginEduardo.tags": "HTML | CSS | JavaScript",
 
-  "projects.projetoandroid.name": "Android project",
+  "projects.projetoandroid.name": "Android Project",
   "projects.projetoandroid.kicker": "Landing page",
-  "projects.projetoandroid.heroTitle": "Android project",
+  "projects.projetoandroid.heroTitle": "Android Project",
   "projects.projetoandroid.heroLead": "Android-inspired themed page published on GitHub Pages.",
-  "projects.projetoandroid.detailTitle": "Android project",
+  "projects.projetoandroid.detailTitle": "Android Project",
   "projects.projetoandroid.description": "Responsive landing page with Android-inspired visuals, a highlights carousel, and content sections. Showcases fluid layout and static deployment.",
   "projects.projetoandroid.tags": "HTML | CSS | JavaScript | Responsive",
 
