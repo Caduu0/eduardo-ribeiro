@@ -52,6 +52,14 @@
   "ui.projectModal.linksTitle": "Links",
   "ui.projectModal.tagsLabel": "Tecnologias utilizadas",
 
+  "projects.todolist.name": "To Do List",
+  "projects.todolist.kicker": "Projeto",
+  "projects.todolist.heroTitle": "To Do List",
+  "projects.todolist.heroLead": "Um projeto para facilitar minha vida quando eu tiver uma ideia.",
+  "projects.todolist.detailTitle": "To Do List",
+  "projects.todolist.description": "Um projeto para facilitar minha vida quando eu tiver uma ideia.",
+  "projects.todolist.tags": "HTML | CSS | JavaScript | Java | Spring Boot | JDA | Lombok | GitHub Gist",
+
   "projects.empreenderrh.name": "EmpreenderRH",
   "projects.empreenderrh.kicker": "Projeto",
   "projects.empreenderrh.heroTitle": "EmpreenderRH",
@@ -66,7 +74,7 @@
   "projects.loginEduardo.heroLead": "Tela de autenticação com layout moderno para treinar HTML, CSS e detalhes de UX.",
   "projects.loginEduardo.detailTitle": "Sistema de Login",
   "projects.loginEduardo.description": "Estudo de interface de login com campos claros, feedback visual e responsividade. Foco em hierarquia tipográfica, estados de botão e boas práticas de marcação semântica.",
-  "projects.loginEduardo.tags": "HTML | CSS | JavaScript",
+  "projects.loginEduardo.tags": "HTML | CSS | JavaScript | PHP | MySQL",
 
   "projects.projetoandroid.name": "Projeto Android",
   "projects.projetoandroid.kicker": "Landing page",

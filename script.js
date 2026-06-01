@@ -174,16 +174,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const PROJECT_DEFS = {
+        todolist: {
+            image: 'img/projects/todolist.png',
+            github: 'https://github.com/Caduu0/CaduList',
+            demo: 'https://imgur.com/a/aFEokhN',
+            i18nPrefix: 'projects.todolist'
+        },
         empreenderrh: {
             image: 'img/projects/empreenderrh.png',
             github: 'https://github.com/Caduu0/empreenderrh',
-            demo: null,
+            demo: 'https://imgur.com/a/77umusW',
             i18nPrefix: 'projects.empreenderrh'
         },
         'login-eduardo': {
             image: 'img/projects/loginpage.png',
             github: 'https://github.com/Caduu0/login-eduardo',
-            demo: null,
+            demo: 'https://imgur.com/a/g72197i',
             i18nPrefix: 'projects.loginEduardo'
         },
         projetoandroid: {
