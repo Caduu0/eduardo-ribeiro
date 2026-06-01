@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="img/icon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title data-i18n="home.title">Portfólio Eduardo</title>
 </head>
@@ -49,6 +52,14 @@
         <section id="projetos">
             <h2 data-i18n="home.projects.title">Projetos</h2>
             <div class="projects-grid" role="list">
+                <button type="button" class="project-tile" role="listitem" data-project="todolist"
+                    aria-haspopup="dialog">
+                    <span class="project-tile__thumb-wrap">
+                        <img src="img/projects/todolist.png" alt="" class="projeto-img" width="500" height="300"
+                            decoding="async">
+                    </span>
+                    <span class="project-tile__name" data-i18n="projects.todolist.name">To Do List</span>
+                </button>
                 <button type="button" class="project-tile" role="listitem" data-project="empreenderrh"
                     aria-haspopup="dialog">
                     <span class="project-tile__thumb-wrap">
