@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            var d = document.documentElement;
+            d.classList.add('js');
+            try {
+                var th = localStorage.getItem('theme');
+                if (th !== 'dark' && th !== 'light') {
+                    th = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                d.setAttribute('data-theme', th);
+            } catch (e) {}
+        })();
+    </script>
+    <title data-i18n="notfound.title">Página não encontrada</title>
+    <meta name="robots" content="noindex">
+    <link rel="icon" type="image/x-icon" href="/img/icon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <main class="notfound" id="main">
+        <p class="notfound__code" aria-hidden="true">404</p>
+        <h1 data-i18n="notfound.title">Página não encontrada</h1>
+        <p data-i18n="notfound.text">O endereço que você tentou abrir não existe ou foi movido.</p>
+        <a class="btn-primary" href="/" data-i18n="notfound.back">Voltar para a página inicial</a>
+    </main>
+    <script src="/script.js"></script>
+</body>
+</html>

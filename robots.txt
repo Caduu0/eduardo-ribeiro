@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://caduu.com.br/sitemap.xml

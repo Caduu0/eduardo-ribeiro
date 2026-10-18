@@ -3,149 +3,379 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function () {
+            var d = document.documentElement;
+            d.classList.add('js');
+            try {
+                var th = localStorage.getItem('theme');
+                if (th !== 'dark' && th !== 'light') {
+                    th = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                d.setAttribute('data-theme', th);
+                var lg = localStorage.getItem('lang');
+                if (lg !== 'pt' && lg !== 'en' && lg !== 'es') {
+                    lg = (navigator.language || '').toLowerCase().slice(0, 2);
+                }
+                if (lg === 'en' || lg === 'es') {
+                    d.classList.add('i18n-pending');
+                    setTimeout(function () { d.classList.remove('i18n-pending'); }, 2500);
+                }
+            } catch (e) {}
+        })();
+    </script>
+    <title data-i18n="home.title">Carlos Eduardo — Web Designer</title>
+    <meta name="description" content="Portfólio de Carlos Eduardo, Web Designer na Ivory Design: lojas virtuais e sistemas para e-commerce, modpacks de Minecraft no CurseForge e projetos web." data-i18n-content="home.meta.description">
+    <link rel="canonical" href="https://caduu.com.br/">
+    <meta name="theme-color" content="#2563eb">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Carlos Eduardo">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://caduu.com.br/">
+    <meta property="og:title" content="Carlos Eduardo — Web Designer" data-i18n-content="home.title">
+    <meta property="og:description" content="Portfólio de Carlos Eduardo, Web Designer na Ivory Design: lojas virtuais e sistemas para e-commerce, modpacks de Minecraft no CurseForge e projetos web." data-i18n-content="home.meta.description">
+    <meta property="og:image" content="https://caduu.com.br/img/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Carlos Eduardo — Web Designer" data-i18n-content="home.title">
+    <meta name="twitter:description" content="Portfólio de Carlos Eduardo, Web Designer na Ivory Design: lojas virtuais e sistemas para e-commerce, modpacks de Minecraft no CurseForge e projetos web." data-i18n-content="home.meta.description">
+    <meta name="twitter:image" content="https://caduu.com.br/img/og-image.jpg">
     <link rel="icon" type="image/x-icon" href="img/icon.ico">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title data-i18n="home.title">Portfólio Eduardo</title>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Carlos Eduardo Moreira Ribeiro da Costa",
+        "alternateName": "Carlos Eduardo",
+        "url": "https://caduu.com.br/",
+        "image": "https://caduu.com.br/img/fotoperfil.webp",
+        "jobTitle": "Web Designer",
+        "worksFor": { "@type": "Organization", "name": "Ivory Design" },
+        "sameAs": [
+            "https://github.com/Caduu0",
+            "https://linkedin.com/in/caduu",
+            "https://www.instagram.com/caduuu0_",
+            "https://www.curseforge.com/members/caduuu0_/projects"
+        ]
+    }
+    </script>
 </head>
 <body>
+    <a class="skip-link" href="#main" data-i18n="ui.skipToContent">Ir para o conteúdo</a>
     <header>
         <div class="header-content">
-            <img src="img/fotoperfil.png" alt="Foto de perfil" class="profile-img">
+            <img src="img/fotoperfil.webp" alt="Foto de Carlos Eduardo" data-i18n-alt="home.profileAlt" class="profile-img" width="120" height="120" fetchpriority="high" decoding="async">
             <h1 data-i18n="home.name">Carlos Eduardo</h1>
         </div>
         <nav>
             <ul>
                 <li><a href="#sobre" data-i18n="home.nav.about">Sobre</a></li>
                 <li><a href="#projetos" data-i18n="home.nav.projects">Projetos</a></li>
+                <li><a href="#clientes" data-i18n="home.nav.clients">Clientes</a></li>
                 <li><a href="#habilidades" data-i18n="home.nav.skills">Habilidades</a></li>
                 <li><a href="#contato" data-i18n="home.nav.contact">Contato</a></li>
-                <li><a href="resume" data-i18n="home.nav.resume">Resume</a></li>
+                <li><a href="resume/" data-i18n="home.nav.resume">Currículo</a></li>
             </ul>
         </nav>
-        <button id="lang-toggle" class="lang-toggle" type="button" title="Mudar idioma">
-            <span class="flag-text">🇧🇷</span>
+        <button id="lang-toggle" class="lang-toggle" type="button" title="Mudar idioma" aria-label="Mudar idioma">
+            <span class="flag-text" aria-hidden="true">🇧🇷</span>
         </button>
-        <button id="theme-toggle" class="theme-toggle" title="Mudar tema">
-            <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
-                <path
-                    d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+        <button id="theme-toggle" class="theme-toggle" type="button" title="Mudar tema" aria-label="Mudar tema">
+            <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon" aria-hidden="true">
+                <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/>
             </svg>
-            <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                class="icon hidden">
-                <path fill-rule="evenodd"
-                    d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
-                    clip-rule="evenodd" />
+            <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon hidden" aria-hidden="true">
+                <path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd"/>
             </svg>
         </button>
     </header>
-    <main>
-        <section id="sobre">
+    <main id="main">
+        <section id="sobre" class="reveal">
             <h2 data-i18n="home.about.title">Sobre Mim</h2>
-            <p data-i18n="home.about.text">Tenho interesse na área de tecnologia e desenvolvimento de sistemas,
-                possuindo facilidade para aprender novas ferramentas e resolver problemas. Busco uma oportunidade para
-                desenvolver minhas habilidades, adquirir experiência profissional e contribuir com soluções eficientes
-                para a equipe.</p>
+            <p data-i18n="home.about.text">Tenho interesse na área de tecnologia e desenvolvimento de sistemas, possuindo facilidade para aprender novas ferramentas e resolver problemas. Busco uma oportunidade para desenvolver minhas habilidades, adquirir experiência profissional e contribuir com soluções eficientes para a equipe.</p>
         </section>
-        <section id="projetos">
+        <section id="projetos" class="reveal">
             <h2 data-i18n="home.projects.title">Projetos</h2>
-            <div class="projects-grid" role="list">
-                <button type="button" class="project-tile" role="listitem" data-project="todolist"
-                    aria-haspopup="dialog">
-                    <span class="project-tile__thumb-wrap">
-                        <img src="img/projects/todolist.png" alt="" class="projeto-img" width="500" height="300"
-                            decoding="async">
-                    </span>
-                    <span class="project-tile__name" data-i18n="projects.todolist.name">To Do List</span>
-                </button>
-                <button type="button" class="project-tile" role="listitem" data-project="empreenderrh"
-                    aria-haspopup="dialog">
-                    <span class="project-tile__thumb-wrap">
-                        <img src="img/projects/empreenderrh.png" alt="" class="projeto-img" width="440" height="240"
-                            decoding="async">
-                    </span>
-                    <span class="project-tile__name" data-i18n="projects.empreenderrh.name">Empreender RH</span>
-                </button>
-                <button type="button" class="project-tile" role="listitem" data-project="login-eduardo"
-                    aria-haspopup="dialog">
-                    <span class="project-tile__thumb-wrap">
-                        <img src="img/projects/loginpage.png" alt="" class="projeto-img" width="440" height="240"
-                            decoding="async">
-                    </span>
-                    <span class="project-tile__name" data-i18n="projects.loginEduardo.name">Login System</span>
-                </button>
-                <button type="button" class="project-tile" role="listitem" data-project="projetoandroid"
-                    aria-haspopup="dialog">
-                    <span class="project-tile__thumb-wrap">
-                        <img src="img/projects/projetoandroid.png" alt="" class="projeto-img" width="440" height="240"
-                            decoding="async">
-                    </span>
-                    <span class="project-tile__name" data-i18n="projects.projetoandroid.name">Projeto Android</span>
-                </button>
+            <div class="project-group">
+                <h3 class="project-group__title" data-i18n="home.projects.groupCurse.title">Modpacks de Minecraft</h3>
+                <p class="project-group__lead" data-i18n="home.projects.groupCurse.lead">Modpacks e mods que crio e publico no CurseForge.</p>
+                <ul class="projects-grid">
+                    <li>
+                        <button type="button" class="project-tile" data-project="allthosetech" aria-haspopup="dialog">
+                            <span class="project-tile__thumb-wrap">
+                                <img src="img/projects/all-those-tech.webp" alt="" class="projeto-img" width="1200" height="655" loading="lazy" decoding="async">
+                            </span>
+                            <span class="project-tile__name" data-i18n="projects.allThoseTech.name">All Those Tech</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="project-tile" data-project="arcana" aria-haspopup="dialog">
+                            <span class="project-tile__thumb-wrap">
+                                <img src="img/projects/arcana.webp" alt="" class="projeto-img" width="1200" height="655" loading="lazy" decoding="async">
+                            </span>
+                            <span class="project-tile__name" data-i18n="projects.arcana.name">Arcana by Caduu</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="project-tile" data-project="minecolonies" aria-haspopup="dialog">
+                            <span class="project-tile__thumb-wrap">
+                                <img src="img/projects/minecolonies.webp" alt="" class="projeto-img" width="1200" height="655" loading="lazy" decoding="async">
+                            </span>
+                            <span class="project-tile__name" data-i18n="projects.minecolonies.name">Minecolonies: Order and Chaos</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="project-tile" data-project="allthosetweaks" aria-haspopup="dialog">
+                            <span class="project-tile__thumb-wrap">
+                                <img src="img/projects/all-those-tweaks.webp" alt="" class="projeto-img" width="1200" height="655" loading="lazy" decoding="async">
+                            </span>
+                            <span class="project-tile__name" data-i18n="projects.allThoseTweaks.name">All Those Tweaks</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="project-group">
+                <h3 class="project-group__title" data-i18n="home.projects.groupStudy.title">Projetos acadêmicos e pessoais</h3>
+                <p class="project-group__lead" data-i18n="home.projects.groupStudy.lead">Projetos que desenvolvi para estudar e praticar.</p>
+                <ul class="projects-grid">
+                    <li>
+                        <button type="button" class="project-tile" data-project="todolist" aria-haspopup="dialog">
+                            <span class="project-tile__thumb-wrap">
+                                <img src="img/projects/todolist.webp" alt="" class="projeto-img" width="1100" height="569" loading="lazy" decoding="async">
+                            </span>
+                            <span class="project-tile__name" data-i18n="projects.todolist.name">To Do List</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="project-tile" data-project="empreenderrh" aria-haspopup="dialog">
+                            <span class="project-tile__thumb-wrap">
+                                <img src="img/projects/empreenderrh.webp" alt="" class="projeto-img" width="1100" height="590" loading="lazy" decoding="async">
+                            </span>
+                            <span class="project-tile__name" data-i18n="projects.empreenderrh.name">Empreender RH</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="project-tile" data-project="login-eduardo" aria-haspopup="dialog">
+                            <span class="project-tile__thumb-wrap">
+                                <img src="img/projects/loginpage.webp" alt="" class="projeto-img" width="1100" height="590" loading="lazy" decoding="async">
+                            </span>
+                            <span class="project-tile__name" data-i18n="projects.loginEduardo.name">Sistema de Login</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="project-tile" data-project="projetoandroid" aria-haspopup="dialog">
+                            <span class="project-tile__thumb-wrap">
+                                <img src="img/projects/projetoandroid.webp" alt="" class="projeto-img" width="1100" height="593" loading="lazy" decoding="async">
+                            </span>
+                            <span class="project-tile__name" data-i18n="projects.projetoandroid.name">Projeto Android</span>
+                        </button>
+                    </li>
+                </ul>
             </div>
         </section>
-        <section id="habilidades">
+        <section id="clientes" class="reveal">
+            <h2 data-i18n="home.clients.title">Clientes</h2>
+            <p class="clients-lead" data-i18n="home.clients.lead">Marcas que atendemos na Ivory Design.</p>
+            <ul class="client-grid">
+                <li>
+                    <button type="button" class="client-logo" data-client="bine-baby" aria-haspopup="dialog">
+                        <img class="client-logo__img" src="img/clients/bine-baby.webp" alt="" width="76" height="76" loading="lazy" decoding="async">
+                        <span class="client-logo__name">Bine Baby</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="client-logo" data-client="asa-sports" aria-haspopup="dialog">
+                        <img class="client-logo__img" src="img/clients/asa-sports.webp" alt="" width="76" height="76" loading="lazy" decoding="async">
+                        <span class="client-logo__name">Asa Sports</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="client-logo" data-client="body-action" aria-haspopup="dialog">
+                        <img class="client-logo__img" src="img/clients/body-action.webp" alt="" width="76" height="76" loading="lazy" decoding="async">
+                        <span class="client-logo__name">Body Action</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="client-logo" data-client="bordados-vitoria" aria-haspopup="dialog">
+                        <img class="client-logo__img" src="img/clients/bordados-vitoria.webp" alt="" width="76" height="76" loading="lazy" decoding="async">
+                        <span class="client-logo__name">Bordados Vitória</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="client-logo" data-client="camaleoa-plus-size" aria-haspopup="dialog">
+                        <img class="client-logo__img" src="img/clients/camaleoa-plus-size.webp" alt="" width="76" height="76" loading="lazy" decoding="async">
+                        <span class="client-logo__name">Camaleoa Plus Size</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="client-logo" data-client="cunhados-truck" aria-haspopup="dialog">
+                        <img class="client-logo__img" src="img/clients/cunhados-truck.webp" alt="" width="76" height="76" loading="lazy" decoding="async">
+                        <span class="client-logo__name">Cunhados Truck Center</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="client-logo" data-client="extreme-nutrition" aria-haspopup="dialog">
+                        <img class="client-logo__img" src="img/clients/extreme-nutrition.webp" alt="" width="76" height="76" loading="lazy" decoding="async">
+                        <span class="client-logo__name">Extreme Nutrition</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="client-logo" data-client="ewerline" aria-haspopup="dialog">
+                        <img class="client-logo__img" src="img/clients/ewerline.webp" alt="" width="76" height="76" loading="lazy" decoding="async">
+                        <span class="client-logo__name">Ewerline</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="client-logo" data-client="ferla" aria-haspopup="dialog">
+                        <img class="client-logo__img" src="img/clients/ferla.webp" alt="" width="76" height="76" loading="lazy" decoding="async">
+                        <span class="client-logo__name">Ferla</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="client-logo" data-client="gimara" aria-haspopup="dialog">
+                        <img class="client-logo__img" src="img/clients/gimara.webp" alt="" width="76" height="76" loading="lazy" decoding="async">
+                        <span class="client-logo__name">Gimara</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="client-logo" data-client="ilha-da-beleza" aria-haspopup="dialog">
+                        <img class="client-logo__img" src="img/clients/ilha-da-beleza.webp" alt="" width="76" height="76" loading="lazy" decoding="async">
+                        <span class="client-logo__name">Ilha da Beleza</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="client-logo" data-client="mega-nutrition" aria-haspopup="dialog">
+                        <img class="client-logo__img" src="img/clients/mega-nutrition.webp" alt="" width="76" height="76" loading="lazy" decoding="async">
+                        <span class="client-logo__name">Mega Nutrition</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="client-logo" data-client="qooqi" aria-haspopup="dialog">
+                        <img class="client-logo__img" src="img/clients/qooqi.webp" alt="" width="76" height="76" loading="lazy" decoding="async">
+                        <span class="client-logo__name">Qooqi Decor</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="client-logo" data-client="thotal-basic" aria-haspopup="dialog">
+                        <img class="client-logo__img" src="img/clients/thotal-basic.webp" alt="" width="76" height="76" loading="lazy" decoding="async">
+                        <span class="client-logo__name">Thotal Basic</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="client-logo" data-client="richee-store" aria-haspopup="dialog">
+                        <img class="client-logo__img" src="img/clients/richee-store.webp" alt="" width="76" height="76" loading="lazy" decoding="async">
+                        <span class="client-logo__name">Richée Store</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="client-logo" data-client="vice-brand" aria-haspopup="dialog">
+                        <img class="client-logo__img" src="img/clients/vice-brand.webp" alt="" width="76" height="76" loading="lazy" decoding="async">
+                        <span class="client-logo__name">Vice Brand</span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="client-logo" data-client="vivar-kids" aria-haspopup="dialog">
+                        <img class="client-logo__img" src="img/clients/vivar-kids.webp" alt="" width="76" height="76" loading="lazy" decoding="async">
+                        <span class="client-logo__name">Vivar Kids</span>
+                    </button>
+                </li>
+            </ul>
+            <div class="project-group">
+                <h3 class="project-group__title" data-i18n="home.platforms.title">Plataformas</h3>
+                <p class="project-group__lead" data-i18n="home.platforms.lead">As plataformas em que construímos todos os dias.</p>
+                <div class="platform-grid">
+                    <article class="platform-card">
+                        <div class="platform-card__logo">
+                            <img src="img/skills/shopify.svg" alt="" width="28" height="32" loading="lazy" decoding="async">
+                            <span>Shopify</span>
+                        </div>
+                        <p data-i18n="platform.shopify.desc">Plataforma global de e-commerce para lojas que querem escalar. Criamos e personalizamos temas, vitrines, páginas de produto e fluxos de compra.</p>
+                        <ul class="chip-list">
+                            <li data-i18n="platform.shopify.t1">Temas</li>
+                            <li data-i18n="platform.shopify.t2">Vitrines</li>
+                            <li data-i18n="platform.shopify.t3">Páginas de produto</li>
+                        </ul>
+                        <a class="platform-card__link" href="https://www.shopify.com" target="_blank" rel="noopener noreferrer" data-i18n="home.platforms.visit">Site oficial</a>
+                    </article>
+                    <article class="platform-card">
+                        <div class="platform-card__logo">
+                            <img src="img/skills/magazord.webp" alt="Magazord" width="192" height="32" loading="lazy" decoding="async">
+                        </div>
+                        <p data-i18n="platform.magazord.desc">Plataforma brasileira de e-commerce completa, pensada para escalar a operação online. Personalizamos layouts, banners, scripts e descrições de produtos.</p>
+                        <ul class="chip-list">
+                            <li data-i18n="platform.magazord.t1">Layouts</li>
+                            <li data-i18n="platform.magazord.t2">Banners e scripts</li>
+                            <li data-i18n="platform.magazord.t3">Descrições de produtos</li>
+                        </ul>
+                        <a class="platform-card__link" href="https://www.magazord.com.br" target="_blank" rel="noopener noreferrer" data-i18n="home.platforms.visit">Site oficial</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="habilidades" class="reveal">
             <h2 data-i18n="home.skills.title">Habilidades</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <img src="img/skills/html5.png" alt="HTML5" class="skill-icon">
+                    <img src="img/skills/html5.webp" alt="" class="skill-icon" width="48" height="48" loading="lazy" decoding="async">
                     <span class="skill-name">HTML5</span>
                 </div>
                 <div class="skill-card">
-                    <img src="img/skills/css.png" alt="CSS3" class="skill-icon">
+                    <img src="img/skills/css.webp" alt="" class="skill-icon" width="48" height="48" loading="lazy" decoding="async">
                     <span class="skill-name">CSS3</span>
                 </div>
                 <div class="skill-card">
-                    <img src="img/skills/js.png" alt="JavaScript" class="skill-icon">
+                    <img src="img/skills/js.webp" alt="" class="skill-icon" width="48" height="48" loading="lazy" decoding="async">
                     <span class="skill-name">JavaScript</span>
                 </div>
                 <div class="skill-card">
-                    <img src="img/skills/php.png" alt="PHP" class="skill-icon">
+                    <img src="img/skills/php.webp" alt="" class="skill-icon" width="48" height="48" loading="lazy" decoding="async">
                     <span class="skill-name">PHP</span>
                 </div>
                 <div class="skill-card">
-                    <img src="img/skills/python.png" alt="Python" class="skill-icon">
+                    <img src="img/skills/python.webp" alt="" class="skill-icon" width="48" height="48" loading="lazy" decoding="async">
                     <span class="skill-name">Python</span>
                 </div>
                 <div class="skill-card">
-                    <img src="img/skills/lua.png" alt="Lua" class="skill-icon">
+                    <img src="img/skills/lua.webp" alt="" class="skill-icon" width="48" height="48" loading="lazy" decoding="async">
                     <span class="skill-name">Lua</span>
                 </div>
                 <div class="skill-card">
-                    <img src="img/skills/github.png" alt="Git & GitHub" class="skill-icon">
-                    <span class="skill-name">Git & GitHub</span>
+                    <img src="img/skills/mysql.svg" alt="" class="skill-icon" width="48" height="48" loading="lazy" decoding="async">
+                    <span class="skill-name">MySQL</span>
                 </div>
                 <div class="skill-card">
-                    <img src="img/skills/logic.png" alt="Lógica de Programação" class="skill-icon">
+                    <img src="img/skills/shopify.svg" alt="" class="skill-icon" width="48" height="48" loading="lazy" decoding="async">
+                    <span class="skill-name">Shopify</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/github.webp" alt="" class="skill-icon" width="48" height="48" loading="lazy" decoding="async">
+                    <span class="skill-name">Git &amp; GitHub</span>
+                </div>
+                <div class="skill-card">
+                    <img src="img/skills/logic.webp" alt="" class="skill-icon" width="48" height="48" loading="lazy" decoding="async">
                     <span class="skill-name" data-i18n="home.skills.logic">Lógica de Programação</span>
                 </div>
             </div>
         </section>
-        <section id="contato">
+        <section id="contato" class="reveal">
             <h2 data-i18n="home.contact.title">Contato</h2>
-            <p><span data-i18n="home.contact.emailLabel">Email:</span> <span id="email"><a
-                        href="mailto:eduardo@caduu.com.br" target="_blank" rel="noopener noreferrer"
-                        data-i18n="home.contact.emailName">eduardo@caduu.com.br</a></span></p>
-            <p><span data-i18n="home.contact.linkedinLabel">LinkedIn:</span> <a href="https://linkedin.com/in/caduu"
-                    target="_blank" rel="noopener noreferrer" data-i18n="home.contact.linkedinName">Carlos Eduardo</a>
-            </p>
-            <p><span data-i18n="home.contact.githubLabel">GitHub:</span> <a href="https://github.com/Caduu0"
-                    target="_blank" rel="noopener noreferrer" data-i18n="home.contact.githubName">Carlos Eduardo</a></p>
-            <p><span data-i18n="home.contact.whatsappLabel">WhatsApp:</span> <a href="https://wa.me/5547991239550"
-                    target="_blank" rel="noopener noreferrer" data-i18n="home.contact.whatsappNumber">Entre em
-                    contato</a></p>
-            <p><span data-i18n="home.contact.instagramLabel">Instagram:</span> <a
-                    href="https://www.instagram.com/caduuu0_" target="_blank" rel="noopener noreferrer"
-                    data-i18n="home.contact.instagramName">@caduuu0_</a></p>
+            <p><span data-i18n="home.contact.emailLabel">Email:</span> <a href="mailto:eduardo@caduu.com.br" data-i18n="home.contact.emailName">eduardo@caduu.com.br</a></p>
+            <p><span data-i18n="home.contact.linkedinLabel">LinkedIn:</span> <a href="https://linkedin.com/in/caduu" target="_blank" rel="noopener noreferrer" data-i18n="home.contact.linkedinName">Carlos Eduardo</a></p>
+            <p><span data-i18n="home.contact.githubLabel">GitHub:</span> <a href="https://github.com/Caduu0" target="_blank" rel="noopener noreferrer" data-i18n="home.contact.githubName">Caduu0</a></p>
+            <p><span data-i18n="home.contact.whatsappLabel">WhatsApp:</span> <a href="https://wa.me/5547991239550" target="_blank" rel="noopener noreferrer" data-i18n="home.contact.whatsappNumber">Entre em contato</a></p>
+            <p><span data-i18n="home.contact.instagramLabel">Instagram:</span> <a href="https://www.instagram.com/caduuu0_" target="_blank" rel="noopener noreferrer" data-i18n="home.contact.instagramName">@caduuu0_</a></p>
         </section>
     </main>
     <footer>
-        <p data-i18n="home.footer.text">&copy; <span id="current-year"></span> Carlos Eduardo. Todos os direitos
-            reservados.</p>
+        <p data-i18n="home.footer.text">&copy; <span id="current-year"></span> Carlos Eduardo. Todos os direitos reservados.</p>
     </footer>
-    <button id="scroll-to-top">↑</button>
+    <button id="scroll-to-top" type="button" aria-label="Voltar ao topo" data-i18n-aria="ui.scrollTop" title="Voltar ao topo" data-i18n-title="ui.scrollTop"></button>
     <div id="project-modal" class="project-modal" hidden data-state="closed">
         <div class="project-modal__backdrop" tabindex="-1"></div>
         <div class="project-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
@@ -157,10 +387,8 @@
                         <h3 class="project-modal__hero-title" data-field="heroTitle"></h3>
                         <p class="project-modal__hero-lead" data-field="heroLead"></p>
                         <div class="project-modal__hero-cta">
-                            <a class="project-modal__btn project-modal__btn--primary" data-field="ctaDemo" href="#"
-                                target="_blank" rel="noopener noreferrer" hidden></a>
-                            <a class="project-modal__btn project-modal__btn--ghost" data-field="ctaGithub" href="#"
-                                target="_blank" rel="noopener noreferrer"></a>
+                            <a class="project-modal__btn project-modal__btn--primary" data-field="ctaDemo" href="#" target="_blank" rel="noopener noreferrer" hidden></a>
+                            <a class="project-modal__btn project-modal__btn--ghost" data-field="ctaGithub" href="#" target="_blank" rel="noopener noreferrer" hidden></a>
                         </div>
                     </div>
                 </div>
@@ -169,8 +397,7 @@
                     <p class="project-modal__description" data-field="description"></p>
                     <ul class="project-modal__tags" data-field="tags" aria-label=""></ul>
                     <section class="project-modal__section" data-section="media">
-                        <h3 class="project-modal__section-title" data-i18n="ui.projectModal.mediaTitle">Mídias do
-                            projeto</h3>
+                        <h3 class="project-modal__section-title" data-i18n="ui.projectModal.mediaTitle">Mídias do projeto</h3>
                         <div class="project-modal__carousel" data-carousel>
                             <div class="project-modal__carousel-viewport">
                                 <div class="project-modal__carousel-track" data-carousel-track></div>
@@ -178,15 +405,42 @@
                             <div class="project-modal__carousel-dots" data-carousel-dots hidden></div>
                         </div>
                     </section>
-                    <section class="project-modal__section">
+                    <section class="project-modal__section" data-section="links">
                         <h3 class="project-modal__section-title" data-i18n="ui.projectModal.linksTitle">Links</h3>
                         <div class="project-modal__links">
-                            <a class="project-modal__btn project-modal__btn--link" data-field="linkDemo" href="#"
-                                target="_blank" rel="noopener noreferrer" hidden></a>
-                            <a class="project-modal__btn project-modal__btn--link" data-field="linkGithub" href="#"
-                                target="_blank" rel="noopener noreferrer"></a>
+                            <a class="project-modal__btn project-modal__btn--link" data-field="linkDemo" href="#" target="_blank" rel="noopener noreferrer" hidden></a>
+                            <a class="project-modal__btn project-modal__btn--link" data-field="linkGithub" href="#" target="_blank" rel="noopener noreferrer" hidden></a>
                         </div>
                     </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="client-modal" class="client-modal" hidden data-state="closed">
+        <div class="client-modal__backdrop" tabindex="-1"></div>
+        <div class="client-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="client-modal-title">
+            <button type="button" class="client-modal__close" aria-label="Fechar">&times;</button>
+            <div class="client-modal__scroll">
+                <div class="cb" data-field="banner" aria-hidden="true"><span class="cb__name" data-field="bannerName"></span><span class="cb__tag" data-field="bannerTag"></span><i class="cb__a"></i><i class="cb__b"></i><i class="cb__c"></i></div>
+                <div class="client-modal__body">
+                    <div class="client-modal__head">
+                        <img class="client-modal__logo" data-field="logo" alt="" width="72" height="72">
+                        <div>
+                            <h2 id="client-modal-title" class="client-modal__title" data-field="name"></h2>
+                            <p class="client-modal__segment" data-field="segment"></p>
+                        </div>
+                    </div>
+                    <p class="client-modal__desc" data-field="desc"></p>
+                    <dl class="client-modal__facts">
+                        <div data-field="platformRow">
+                            <dt data-i18n="clients.modal.platform">Plataforma</dt>
+                            <dd data-field="platform"></dd>
+                        </div>
+                    </dl>
+                    <div class="client-modal__actions">
+                        <a class="project-modal__btn project-modal__btn--primary" data-field="visit" href="#" target="_blank" rel="noopener noreferrer" hidden></a>
+                        <a class="project-modal__btn project-modal__btn--ghost" data-field="visit2" href="#" target="_blank" rel="noopener noreferrer" hidden></a>
+                    </div>
                 </div>
             </div>
         </div>
