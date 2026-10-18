@@ -19,12 +19,23 @@ Lua,
 Python,
 PHP,
 MySQL,
+Shopify,
 Logica de programação,
 Git & GitHub.
 
+💼 Work
+
+Web Designer at Ivory Design (since September 2026), building online stores and systems for e-commerce clients.
+
 📂 Projects
 
-Here are some of the projects available in this repository:
+The portfolio is organised in three groups, newest first:
+
+🔹 Minecraft modpacks and mods published on CurseForge (All Those Tech, Arcana by Caduu, Minecolonies: Order and Chaos, All Those Tweaks)
+🔹 E-commerce projects built at Ivory Design (clients and platforms: Shopify and Magazord) (Gimara, Cunhados Truck Center, Extreme Nutrition, Qooqi Decor, Asa Sports)
+🔹 Academic and personal projects (To Do List, EmpreenderRH, Login Page, Projeto Android)
+
+Here is the portfolio itself:
 
 🔹 Personal Portfolio
 Website created to showcase my projects and skills
