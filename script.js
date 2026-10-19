@@ -148,25 +148,25 @@ document.addEventListener('DOMContentLoaded', function () {
     const PROJECT_DEFS = {
         /* Modpacks (CurseForge) */
         allthosetech: {
-            image: 'img/projects/all-those-tech.webp',
+            image: 'img/projects/all-those-tech.webp?v=2',
             demo: 'https://www.curseforge.com/minecraft/modpacks/all-those-tech',
             demoLabel: 'ui.projectModal.viewCurseforge',
             i18nPrefix: 'projects.allThoseTech'
         },
         arcana: {
-            image: 'img/projects/arcana.webp',
+            image: 'img/projects/arcana.webp?v=2',
             demo: 'https://www.curseforge.com/minecraft/modpacks/arcana-by-caduu',
             demoLabel: 'ui.projectModal.viewCurseforge',
             i18nPrefix: 'projects.arcana'
         },
         minecolonies: {
-            image: 'img/projects/minecolonies.webp',
+            image: 'img/projects/minecolonies.webp?v=2',
             demo: 'https://www.curseforge.com/minecraft/modpacks/minecolonies-order-and-chaos',
             demoLabel: 'ui.projectModal.viewCurseforge',
             i18nPrefix: 'projects.minecolonies'
         },
         allthosetweaks: {
-            image: 'img/projects/all-those-tweaks.webp',
+            image: 'img/projects/all-those-tweaks.webp?v=2',
             demo: 'https://www.curseforge.com/minecraft/mc-mods/all-those-tweaks',
             demoLabel: 'ui.projectModal.viewCurseforge',
             i18nPrefix: 'projects.allThoseTweaks'
