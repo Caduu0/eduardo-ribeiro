@@ -202,8 +202,9 @@ header::before {
 nav ul {
     list-style: none;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    gap: 0.9rem 1.1rem;
     margin-top: 2rem;
     position: relative;
     z-index: 1;
@@ -1261,22 +1262,41 @@ footer {
     }
 
     #projetos .projects-grid {
-        flex-direction: column;
-        align-items: flex-start;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.9rem;
+        padding: 1rem;
+    }
+
+    .projects-grid > li {
+        min-width: 0;
     }
 
     .project-tile {
-        max-width: 100%;
-        flex-direction: row;
-        align-items: center;
-        gap: 1rem;
+        width: 100%;
+        max-width: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 0.55rem;
         text-align: left;
+    }
+
+    .project-tile__thumb-wrap {
+        width: 100%;
+        aspect-ratio: 1200 / 655;
     }
 
     .projeto-img {
         width: 100%;
-        max-width: 180px;
-        height: auto;
+        max-width: none;
+        height: 100%;
+    }
+
+    .project-tile__name {
+        font-size: 0.9rem;
+        padding: 0 0.15rem 0.2rem;
+        overflow-wrap: anywhere;
     }
 
     .theme-toggle {
@@ -1905,7 +1925,7 @@ button.client-logo:hover .client-logo__img {
 
 /* Mega Nutrition: grafite e café */
 .cb--mega-nutrition { background: #14161a; color: #fff; font-family: 'Archivo', 'Inter', sans-serif; }
-.cb--mega-nutrition .cb__name { font-weight: 800; text-transform: uppercase; font-size: 10.4cqw; letter-spacing: -0.015em; max-width: 56%; }
+.cb--mega-nutrition .cb__name { font-weight: 800; text-transform: uppercase; font-size: 9cqw; letter-spacing: -0.015em; max-width: 62%; }
 .cb--mega-nutrition .cb__tag { color: #d9b48a; font-weight: 600; max-width: 52%; }
 .cb--mega-nutrition .cb__a { right: 7cqw; top: 14cqw; bottom: 14cqw; width: 22cqw; border-radius: 2cqw; background: linear-gradient(90deg, #6e4222, #b9814b 45%, #8a5a33); box-shadow: 0 0 0 0.8cqw #14161a, 0 0 0 1.4cqw rgba(217, 180, 138, 0.4); }
 .cb--mega-nutrition .cb__b { right: 7cqw; top: 14cqw; width: 22cqw; height: 5cqw; border-radius: 2cqw 2cqw 0 0; background: #2a2d33; }
@@ -1958,3 +1978,17 @@ button.client-logo:hover .client-logo__img {
 .client-modal__actions a.project-modal__btn--primary:visited { color: #ffffff; }
 .client-modal__actions a.project-modal__btn--ghost,
 .client-modal__actions a.project-modal__btn--ghost:visited { color: var(--link-color); }
+
+/* alvos de toque (mínimo 24px de altura) */
+.platform-card__link,
+#contato p a,
+footer a {
+    display: inline-block;
+    padding: 0.45rem 0;
+}
+
+@media (max-width: 480px) {
+    .client-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem 0.5rem; }
+    .client-logo__img { width: 68px; height: 68px; }
+    .client-logo__name { font-size: 0.74rem; }
+}
