@@ -50,15 +50,15 @@
         <img class="profile-photo" src="../img/fotocurriculo.webp" alt="Foto de Carlos Eduardo" data-i18n-alt="home.profileAlt" width="84" height="84" decoding="async" />
         <div>
           <h1 data-i18n="resume.name">Carlos Eduardo Moreira Ribeiro da Costa</h1>
-          <p class="subtitle" data-i18n="resume.subtitle">Web Designer · Cursando Análise e Desenvolvimento de Sistemas</p>
+          <p class="subtitle" data-i18n="resume.subtitle">Web Designer | Desenvolvedor de e-commerce (Shopify e Magazord)</p>
         </div>
       </div>
       <div class="profile-controls no-print">
-        <button id="print-btn" class="print-btn" type="button" title="Imprimir ou salvar em PDF" aria-label="Imprimir ou salvar em PDF" data-i18n-title="resume.print" data-i18n-aria="resume.print">
+        <a id="download-btn" class="print-btn" href="curriculo.pdf" download="Curriculo-Carlos-Eduardo.pdf" title="Baixar currículo (PDF)" aria-label="Baixar currículo (PDF)" data-i18n-title="resume.print" data-i18n-aria="resume.print">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true">
-            <path d="M6 9V3h12v6M6 18H4a1 1 0 01-1-1v-6a2 2 0 012-2h14a2 2 0 012 2v6a1 1 0 01-1 1h-2M6 14h12v7H6z"/>
+            <path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M4 17v3a1 1 0 001 1h14a1 1 0 001-1v-3"/>
           </svg>
-        </button>
+        </a>
         <button id="lang-toggle" class="lang-toggle" type="button" title="Mudar idioma" aria-label="Mudar idioma">
           <span class="flag-text" aria-hidden="true">🇧🇷</span>
         </button>
@@ -75,8 +75,20 @@
     <div class="grid">
       <aside class="side-panel">
         <section>
+          <h2 data-i18n="resume.contact.title">CONTATO</h2>
+          <ul>
+            <li><a href="mailto:eduardo@caduu.com.br">eduardo@caduu.com.br</a></li>
+            <li><a href="https://caduu.com.br/" target="_blank" rel="noopener noreferrer">caduu.com.br</a></li>
+            <li><a href="https://www.linkedin.com/in/caduu" target="_blank" rel="noopener noreferrer">linkedin.com/in/caduu</a></li>
+            <li><a href="https://github.com/Caduu0" target="_blank" rel="noopener noreferrer">github.com/Caduu0</a></li>
+            <li><a href="https://wa.me/5547991239550" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href="https://www.instagram.com/caduuu0_" target="_blank" rel="noopener noreferrer">Instagram: @caduuu0_</a></li>
+            <li><a href="https://www.curseforge.com/members/caduuu0_/projects" target="_blank" rel="noopener noreferrer">CurseForge: caduuu0_</a></li>
+          </ul>
+        </section>
+        <section>
           <h2 data-i18n="resume.education.title">FORMAÇÃO</h2>
-          <p data-i18n="resume.education.text1">Atualmente cursando Análise e Desenvolvimento de Sistemas na Universidade do Vale do Itajaí (UNIVALI).</p>
+          <p data-i18n="resume.education.text1">Análise e Desenvolvimento de Sistemas, Universidade do Vale do Itajaí (UNIVALI). Cursando.</p>
           <p data-i18n="resume.education.text2">Ensino Médio Completo</p>
         </section>
         <section>
@@ -88,37 +100,71 @@
           </ul>
         </section>
         <section>
-          <h2 data-i18n="resume.skills.title">HABILIDADES E COMPETÊNCIAS</h2>
-          <p data-i18n="resume.skills.text">Proativo, ágil, comunicativo e atento aos detalhes. Aprendizagem rápida, com forte senso de ética, responsabilidade e trabalho em equipe.</p>
+          <h2 data-i18n="resume.skills.title">PERFIL</h2>
+          <p data-i18n="resume.skills.text">Proativo, ágil, comunicativo e detalhista.</p>
         </section>
         <section>
-          <h2 data-i18n="resume.technical.title">HABILIDADES TÉCNICAS</h2>
-          <p data-i18n="resume.technical.text">HTML5, CSS, JavaScript, PHP, MySQL, Lua, Python, Git, GitHub, Lógica de Programação, Microsoft Access e e-commerce (Magazord e Shopify).</p>
+          <h2 data-i18n="resume.technical.title">COMPETÊNCIAS TÉCNICAS</h2>
+          <ul>
+            <li data-i18n="resume.technical.front">Front-end: HTML5, CSS3, JavaScript</li>
+            <li data-i18n="resume.technical.back">Back-end e dados: PHP, MySQL, Python, Lua</li>
+            <li data-i18n="resume.technical.ecom">E-commerce: Shopify, Magazord</li>
+            <li data-i18n="resume.technical.tools">Ferramentas: Git, GitHub, Lógica de Programação</li>
+          </ul>
         </section>
         <section>
-          <h2 data-i18n="resume.courses.title">CURSOS E CERTIFICAÇÕES</h2>
-          <p data-i18n="resume.courses.text">Curso Preparatório para Jovem Aprendiz Administrativo, Informática Express: Excel, Administração, Práticas de Secretariado, Recursos Humanos (Departamento Pessoal), Contabilidade e Inglês Básico.</p>
+          <h2 data-i18n="resume.courses.title">CURSOS</h2>
+          <p data-i18n="resume.courses.text">Curso Preparatório para Jovem Aprendiz Administrativo, Informática Express.</p>
         </section>
       </aside>
       <main class="content-panel" id="resume-main">
         <section>
-          <h2 data-i18n="resume.about.title">SOBRE MIM</h2>
-          <p data-i18n="resume.about.text">Tenho interesse na área de tecnologia e desenvolvimento de sistemas, com grande facilidade para aprender novas ferramentas e resolver problemas. Busco uma oportunidade para desenvolver minhas habilidades, adquirir experiência profissional e contribuir com soluções eficientes para a equipe.</p>
+          <h2 data-i18n="resume.about.title">RESUMO</h2>
+          <p data-i18n="resume.about.text">Web Designer na Ivory Design desde setembro de 2026, desenvolvo temas, páginas, banners e scripts para lojas virtuais em Shopify e Magazord de mais de 15 marcas. Estudante de Análise e Desenvolvimento de Sistemas na UNIVALI, publico modpacks e mods de Minecraft no CurseForge e mantenho projetos próprios em web.</p>
         </section>
         <section>
           <h2 data-i18n="resume.experience.title">EXPERIÊNCIA PROFISSIONAL</h2>
           <article class="experience-item">
             <h3 data-i18n="resume.experience.job3.title">Web Designer - Ivory Design</h3>
             <p class="time" data-i18n="resume.experience.job3.time">Setembro de 2026 – Atual</p>
-            <p class="job-desc" data-i18n="resume.experience.job3.desc">Desenvolvimento de lojas virtuais e sistemas para e-commerces.</p>
+            <ul class="job-desc">
+              <li data-i18n="resume.experience.job3.b1">Desenvolvimento de lojas e sistemas para e-commerces nas plataformas Shopify e Magazord.</li>
+              <li data-i18n="resume.experience.job3.b2">Shopify: temas, vitrines, páginas de produto e fluxos de compra.</li>
+              <li data-i18n="resume.experience.job3.b3">Magazord: layouts, banners, scripts e descrições de produtos.</li>
+              <li data-i18n="resume.experience.job3.b4">Páginas e campanhas personalizadas, como Black Friday, Grupo VIP e combos.</li>
+              <li data-i18n="resume.experience.job3.b5">Clientes: Asa Sports, Body Action, Ferla, Gimara, Ilha da Beleza, Mega Nutrition, Qooqi Decor, Richée Store, Vice Brand, Vivar Kids, entre outros.</li>
+            </ul>
           </article>
           <article class="experience-item">
-            <h3 data-i18n="resume.experience.job2.title">Mensageiro (Bellman) - Mercure Camboriú</h3>
+            <h3 data-i18n="resume.experience.job2.title">Mensageiro - Mercure BC</h3>
             <p class="time" data-i18n="resume.experience.job2.time">2025 – 2026 (1 ano)</p>
           </article>
           <article class="experience-item">
-            <h3 data-i18n="resume.experience.job1.title">Atendente de Caixa / Auxiliar de Cozinha - La Fruta Açaí</h3>
+            <h3 data-i18n="resume.experience.job1.title">Caixa / Auxiliar de Cozinha - La Fruta Açaí</h3>
             <p class="time" data-i18n="resume.experience.job1.time">2023 – 2024 (6 meses)</p>
+          </article>
+        </section>
+        <section>
+          <h2 data-i18n="resume.projects.title">PROJETOS</h2>
+          <article class="experience-item">
+            <h3 data-i18n="resume.projects.mc.title">Modpacks e mods de Minecraft</h3>
+            <p class="time" data-i18n="resume.projects.mc.desc">Publicados no CurseForge (usuário caduuu0_), com mais de 1.7 mil downloads.</p>
+            <ul class="job-desc">
+              <li>All Those Tech — modpack</li>
+              <li>Arcana by Caduu — modpack</li>
+              <li>Minecolonies: Order and Chaos — modpack</li>
+              <li data-i18n="resume.projects.mc.p4">All Those Tweaks — mod de suporte aos meus modpacks</li>
+            </ul>
+          </article>
+          <article class="experience-item">
+            <h3 data-i18n="resume.projects.other.title">Projetos acadêmicos e pessoais</h3>
+            <ul class="job-desc">
+              <li data-i18n="resume.projects.other.p1">Portfólio profissional (caduu.com.br) — site responsivo com modo claro/escuro, em domínio próprio</li>
+              <li data-i18n="resume.projects.other.p2">Sistema de Login — PHP, autenticação, recuperação de senha e painel administrativo</li>
+              <li>To Do List</li>
+              <li>Empreender RH</li>
+              <li>Projeto Android</li>
+            </ul>
           </article>
         </section>
       </main>

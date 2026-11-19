@@ -6,9 +6,7 @@ Here you can find some of my projects, skills, and ways to contact me.
 
 📌 About Me
 
-I am interested in the technology and systems development field, with a strong ability to learn new tools and solve problems.
-
-I am seeking an opportunity to develop my skills, gain professional experience, and contribute effective solutions to the team.
+Web Designer at Ivory Design since September 2026, building themes, pages, banners and scripts for Shopify and Magazord online stores. Systems Analysis and Development student at UNIVALI, I publish Minecraft modpacks and mods on CurseForge and maintain my own web projects.
 
 🛠️ Technologies I Use
 
@@ -20,6 +18,7 @@ Python,
 PHP,
 MySQL,
 Shopify,
+Magazord,
 Logica de programação,
 Git & GitHub.
 
