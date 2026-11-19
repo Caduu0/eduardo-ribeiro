@@ -200,8 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
     /* ---------- clientes ---------- */
     const CLIENT_DEFS = {
         'asa-sports': { name: 'Asa Sports', url: 'https://asasports.com.br/', platform: 'shopify', visitKey: 'clients.modal.visitSports', extraUrl: 'https://asauniformes.com.br/', info: true },
-        'bine-baby': { name: 'Bine Baby', url: 'https://www.binebaby.com.br/', platform: 'magazord', info: false },
-        'body-action': { name: 'Body Action', url: 'https://www.bodyaction.com.br/', platform: 'shopify', info: true },
+        'body-action': { name: 'Body Action', platform: 'shopify', info: true },
         'bordados-vitoria': { name: 'Bordados Vitória', url: 'https://lojavirtual.bordadosvitoria.com.br/', platform: 'magazord', info: false },
         'camaleoa-plus-size': { name: 'Camaleoa Plus Size', url: 'https://camaleoaplussize.com.br/', platform: 'shopify', info: false },
         'cunhados-truck': { name: 'Cunhados Truck Center', url: 'https://www.cunhadostruckcenter.com.br/', platform: 'magazord', info: true },
@@ -209,10 +208,14 @@ document.addEventListener('DOMContentLoaded', function () {
         'extreme-nutrition': { name: 'Extreme Nutrition', url: 'https://www.extremenutrition.com.br/', platform: 'magazord', info: true },
         'ferla': { name: 'Ferla', url: 'https://useferla.com.br/', platform: 'shopify', info: false },
         'gimara': { name: 'Gimara', url: 'https://www.gimara.com.br/', platform: 'magazord', info: true },
+        'hernan': { name: 'Hernan', url: 'https://hernaneyewear.com.br/', platform: 'shopify', info: false },
         'ilha-da-beleza': { name: 'Ilha da Beleza', url: 'https://ilhadabeleza.com.br/', platform: 'shopify', info: true },
+        'lavina-ambientes': { name: 'Lavina Ambientes', url: 'https://www.lavinaambientes.com.br/', platform: 'magazord', info: false },
+        'lumare-personalizados': { name: 'Lumaré Personalizados', url: 'https://www.lumarepersonalizados.com.br/', platform: 'magazord', info: false },
         'mega-nutrition': { name: 'Mega Nutrition', url: 'https://meganutrition.com.br/', platform: 'shopify', info: false },
         'qooqi': { name: 'Qooqi Decor', url: 'https://www.qooqi.com.br/', platform: 'magazord', info: true },
         'thotal-basic': { name: 'Thotal Basic', url: 'https://www.thotalbasic.com.br/', platform: 'magazord', info: false },
+        'togo-brasil': { name: 'Togo Brasil', url: 'https://www.togobrasil.com/', platform: 'magazord', info: false },
         'richee-store': { name: 'Richée Store', bn: 'Richée', url: 'https://richeestore.com.br/', platform: 'shopify', info: false },
         'vice-brand': { name: 'Vice Brand', bn: 'Vice', url: 'https://vicebrand.com.br/', platform: 'shopify', info: false },
         'vivar-kids': { name: 'Vivar Kids', url: 'https://www.vivarkids.com.br/', platform: 'magazord', info: false }

@@ -1843,14 +1843,6 @@ button.client-logo:hover .client-logo__img {
 .cb--asa-sports .cb__b { top: 0; bottom: 0; right: 22cqw; width: 5cqw; background: rgba(236, 102, 8, 0.4); transform: skewX(-16deg); }
 .cb--asa-sports .cb__c { top: 0; bottom: 0; right: 30cqw; width: 1.4cqw; background: #1f1f1f; transform: skewX(-16deg); }
 
-/* Bine Baby: creme, caramelo e azul-marinho */
-.cb--bine-baby { background: #f7eee4; color: #122d47; font-family: 'Fredoka', 'Inter', sans-serif; }
-.cb--bine-baby .cb__name { font-weight: 600; font-size: 14cqw; }
-.cb--bine-baby .cb__tag { color: #7a4f39; font-weight: 600; }
-.cb--bine-baby .cb__a { right: -12cqw; top: -14cqw; width: 52cqw; height: 52cqw; border-radius: 50%; background: #b07454; }
-.cb--bine-baby .cb__b { right: 18cqw; bottom: -10cqw; width: 28cqw; height: 28cqw; border-radius: 50%; background: #e8cdb6; }
-.cb--bine-baby .cb__c { right: 6cqw; bottom: 8cqw; width: 14cqw; height: 14cqw; background: radial-gradient(circle, #122d47 0 0.7cqw, transparent 0.8cqw) 0 0 / 3.5cqw 3.5cqw; opacity: 0.55; }
-
 /* Body Action: preto e amarelo com listras de velocidade */
 .cb--body-action { background: #121212; color: #fff; font-family: 'Poppins', 'Inter', sans-serif; }
 .cb--body-action .cb__name { font-weight: 800; font-style: italic; text-transform: uppercase; font-size: 11cqw; letter-spacing: -0.01em; }
